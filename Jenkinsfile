@@ -2,18 +2,15 @@ pipeline {
     agent any
     tools {
         maven 'Maven'
+        docker 'Docker'
     }
     environment {
         DATE = new Date().format('yy.M')
         TAG = "${DATE}.${BUILD_NUMBER}"
+        dockerHome = tool 'Docker'
+        PATH = "${dockerHome}/bin:${env.PATH}"
     }
     stages {
-        stage('Initialize') {
-             steps {
-                def dockerHome = tool 'Docker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-             }
-        }
         stage ('Build') {
             steps {
                 sh 'mvn clean package'
