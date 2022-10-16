@@ -1,5 +1,6 @@
 package com.waracle.cakemgr.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Cake", uniqueConstraints = {@UniqueConstraint(columnNames = "ID"), @UniqueConstraint(columnNames = "TITLE")})
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class CakeEntity {
 

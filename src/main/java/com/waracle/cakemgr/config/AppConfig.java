@@ -1,7 +1,5 @@
 package com.waracle.cakemgr.config;
 
-import com.waracle.cakemgr.service.PreloadDataService;
-import com.waracle.cakemgr.service.PreloadDataServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

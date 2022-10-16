@@ -1,0 +1,15 @@
+- Created Springboot application with the required dependencies using spring initializr (https://start.spring.io/)
+- Added Cake Entity as mentioned in the requirement and configured embedded hsql database by mentioning datasource properties in application.properties
+- Added Preload Data service which will be called on application startup to call remote endpoint and to save cake data to the DB
+- Added RestController class with GET method to retrieve all the cakes available in DB
+- Created CakeManagerRepository by extending JpaRepository for Cake Entity in order to use inbuilt SimplelJpaRepository implementation  
+- Added POST method endpoint to RestController class to add new cake
+- Added hibernate validator for validation of cake model fields to make the mandatory and to check min and max length
+- Custom ResponseEntityException handler added to handle various exceptions
+- OpenAPI dependency added for API documentation, url: http://localhost:8088/cake-manager/swagger-ui/index.html
+- OAuth Security dependency added and properties added for github as provider in application.properties. SecurityFilterChain bean defined to disable csrf
+- Added junit test cases and jacoco plugin to check code coverage
+- Added Dockerfile to containerize the application
+- Added Jenkinsfile for CI/CD with stages maven build, build docker image, push to docker hub and to deploy (run) docker container
+- Created a new git repository and pushed the code to remote repository
+- Tested end-to-end by configuring jenkins job for the git repo :https://github.com/nkanat/cake-manager.git

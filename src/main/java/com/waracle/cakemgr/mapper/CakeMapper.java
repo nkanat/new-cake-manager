@@ -15,4 +15,8 @@ public class CakeMapper {
                 .map(entity -> new Cake(entity.getTitle(), entity.getDesc(), entity.getImage()))
                 .collect(Collectors.toList());
     }
+
+    public CakeEntity getCakeEntity(Cake cake) {
+        return new CakeEntity(0,cake.getTitle(),cake.getDesc(), cake.getImage());
+    }
 }
